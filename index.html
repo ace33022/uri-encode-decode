@@ -75,6 +75,8 @@
 	  -- @see {@link https://www.w3schools.com/jsref/jsref_encodeuricomponent.asp JavaScript encodeURIComponent() Function}
 	  -- @see {@link https://www.w3schools.com/jsref/jsref_decodeuricomponent.asp JavaScript decodeURIComponent() Function}
 		--
+		-- @version 2017/03/16 套用btn-group-justified，讓Radio選項的寬度可以對齊。
+		--
     -->
 
   <body>
@@ -93,8 +95,8 @@
 			</div>
 
 			<div class="row">
-				<div class="col-sm-4 col-sm-offset-2">
-					<div class="btn-group" data-toggle="buttons" id="codeType">
+				<div class="col-sm-offset-2 col-sm-4">
+					<div class="btn-group btn-group-justified" data-toggle="buttons" id="codeType">
 						<label class="btn btn-primary active">
 							<input type="radio" name="codeType" autocomplete="off" value="encode" checked="checked">Encode
 						</label>
