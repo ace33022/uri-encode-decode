@@ -1,0 +1,199 @@
+<!--
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <base href="/">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <meta name="author" content="">
+    <meta name="force-login" content="N">
+
+    <meta name="robots" content="index,follow">
+
+    <meta name="keywords" content="av">
+    <meta name="description" content="av">
+
+    <title>URI Encode/Decode</title>
+
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.3.8/css/fileinput.min.css" media="all" />
+
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="https://ace33022.github.io/tw/ace33022/NameSpace.js"></script>
+
+    <script type="text/javascript" src="https://ace33022.github.io/tw/ace33022/DefaultConfigurations.js"></script>
+    <script type="text/javascript" src="https://ace33022.github.io/tw/Configurations.js"></script>
+
+    <script type="text/javascript" src="https://ace33022.github.io/tw/ace33022/RequireJSConfig.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
+
+    <script type="text/javascript">
+
+      requirejs.config(tw.ace33022.RequireJSConfig);
+    </script>
+  </head>
+
+  <!--
+    --
+    -- url-encode-decode
+    --
+    -- @see <a href="https://developer.mozilla.org/en-US/docs/Web">Web technology For developers | MDN</a>
+    --
+    -- @see <a href="https://jquery.com/">jQuery</a>
+		-- @see <a href="https://api.jquery.com/focus/">.focus() | jQuery API Documentation</a>
+		-- @see <a href="https://api.jquery.com/focusin/">.focusin() | jQuery API Documentation</a>
+		-- @see <a href="http://api.jquery.com/checked-selector/">:checked Selector | jQuery API Documentation</a>
+    --
+    -- @see <a href="http://getbootstrap.com/">Bootstrap · The world's most popular mobile-first and responsive front-end framework.</a>
+    -- @see <a href="http://getbootstrap.com/components/">Components · Bootstrap</a>
+    -- @see <a href="http://getbootstrap.com/css/">CSS · Bootstrap</a>
+    -- @see <a href="http://getbootstrap.com/javascript/">JavaScript · Bootstrap</a>
+    --
+	  -- @see {@link https://www.w3schools.com/jsref/jsref_escape.asp JavaScript escape() Function}
+	  -- @see {@link https://www.w3schools.com/jsref/jsref_unescape.asp JavaScript unescape() Function}
+	  -- @see {@link https://www.w3schools.com/jsref/jsref_encodeuri.asp JavaScript encodeURI() Function}
+	  -- @see {@link https://www.w3schools.com/jsref/jsref_decodeuri.asp JavaScript decodeURI() Function}
+	  -- @see {@link https://www.w3schools.com/jsref/jsref_encodeuricomponent.asp JavaScript encodeURIComponent() Function}
+	  -- @see {@link https://www.w3schools.com/jsref/jsref_decodeuricomponent.asp JavaScript decodeURIComponent() Function}
+		--
+    -->
+
+  <body>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- 工具網站廣告 -->
+		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2244483882494685" data-ad-slot="1775165396" data-ad-format="auto"></ins>
+		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+		<div class="container-fluid col-sm-offset-2" style="padding-top: 50px;">
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="form-group">
+						<textarea class="form-control" id="sourceURI"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-2">
+					<div class="btn-group" data-toggle="buttons" id="codeType">
+						<label class="btn btn-primary active">
+							<input type="radio" name="codeType" autocomplete="off" value="encode" checked="checked">Encode
+						</label>
+						<label class="btn btn-primary">
+							<input type="radio" name="codeType" autocomplete="off" value="decode">Decode
+						</label>
+					</div>    		
+				</div>
+			</div>
+			
+			<br/>
+			
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-2">
+					<button type="button" class="btn btn-primary form-control" id="btnCode">Encode/Decode</button>
+				</div>	
+			</div>
+			
+			<br/>
+
+			<div class="row">
+				<div class="col-sm-8">
+					<label>escape/unescape</label>
+				</div>	
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="form-group">
+						<textarea class="form-control" id="escape"></textarea>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-8">
+					<label>encodeURI/decodeURI</label>
+				</div>	
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="form-group">
+						<textarea class="form-control" id="codeURI"></textarea>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-8">
+					<label>encodeURIComponent/decodeURIComponent</label>
+				</div>	
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="form-group">
+						<textarea class="form-control" id="codeURIComponent"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <script type="text/javascript">
+		
+			requirejs(["tw.ace33022.util.browser.ReUtils", "tw.ace33022.util.CommonUtils", "bootstrap"], function(ReUtils, CommonUtils) {
+			
+				var bindEvent = function() {
+
+					jQuery('textarea').on('focus', function(e) {jQuery(this).select();});
+					
+					jQuery('#btnCode').on('click', function(e) {
+
+						e.preventDefault();
+						
+						if (jQuery('#codeType input:radio:checked').val() == 'encode') {
+						
+							jQuery('#escape').val(escape(jQuery('#sourceURI').val()));
+							jQuery('#codeURI').val(encodeURI(jQuery('#sourceURI').val()));
+							jQuery('#codeURIComponent').val(encodeURIComponent(jQuery('#sourceURI').val()));
+						}
+						else {
+						
+							jQuery('#escape').val(unescape(jQuery('#sourceURI').val()));
+							jQuery('#codeURI').val(decodeURI(jQuery('#sourceURI').val()));
+							jQuery('#codeURIComponent').val(decodeURIComponent(jQuery('#sourceURI').val()));
+						}
+					});
+				}
+				
+        jQuery(document).ready(function() {
+				
+					bindEvent();
+
+					jQuery('#sourceURI').focus();
+					
+					// ReUtils.beforeInitEnv(function() {});
+        });
+			});
+    </script>
+  </body>
+</html>
