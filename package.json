@@ -1,7 +1,7 @@
 {
 	"main": "nw_main.js",
-	"name": "Template",
+	"name": "URI Encode/Decode",
 	"version": "0.0.1",
-	"description": "Template", 
+	"description": "URI Encode/Decode", 
 	"author": "ace"
 }

@@ -4,11 +4,11 @@
  *
  * @version 2018/10/01 初始版本。
  *
- * @author ace
- * 
  * @see {@link http://nwjs.io/|NW.js}
  *
+ * @author ace
+ * 
  */
 
-process.env.NODE_PATH = 'W:/Tool/Package/LangEnv/JavaScript/nodeJS/node_modules';
-process.env.ConfigurationsFile = 'W:/Tool/Package/LangEnv/Java/apache-tomcat/webapps/ROOT/javascripts/Configurations.js';
+process.env.NODE_PATH = 'T:/package/LangEnv/JavaScript/nodeJS/node_modules';
+process.env.ConfigurationFile = 'W:/htdoc/javascript/tw/Configuration.js';

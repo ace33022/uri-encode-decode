@@ -31,7 +31,7 @@ var win = nw.Window.open('index.html', {
 
 	// "toolbar": true,
 	// "title": "Hello",
-	"icon": "icons/favicon.ico",
+	// "icon": "icon/favicon.ico",
 	"frame": true,
 	"width": 800,
 	"height": 600,
